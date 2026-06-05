@@ -26,7 +26,6 @@ def calculate(expression):
 
 def main():
     print("Basic calculator")
-    print("Enter expressions using +, -, *, / or functions add(), subtract(), multiply(), divide()")
     while True:
         try:
             expr = input("> ").strip()
