@@ -2,9 +2,6 @@ def add(a, b):
     return a + b
 
 
-def subtract(a, b):
-    return a - b
-
 
 
 def divide(a, b):
@@ -17,7 +14,6 @@ def calculate(expression):
     try:
         return eval(expression, {"__builtins__": None}, {
             "add": add,
-            "subtract": subtract,
             "divide": divide
         })
     except Exception as e:
@@ -26,7 +22,6 @@ def calculate(expression):
 
 def main():
     print("Basic calculator")
-    print("Enter expressions using +, -, *, / or functions add(), subtract(), multiply(), divide()")
     while True:
         try:
             expr = input("> ").strip()
