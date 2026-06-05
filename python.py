@@ -2,9 +2,9 @@ def add(a, b):
     return a + b
 
 
+def subtract(a, b):
+    return a - b
 
-def multiply(a, b):
-    return a * b
 
 
 def divide(a, b):
@@ -18,7 +18,6 @@ def calculate(expression):
         return eval(expression, {"__builtins__": None}, {
             "add": add,
             "subtract": subtract,
-            "multiply": multiply,
             "divide": divide
         })
     except Exception as e:
