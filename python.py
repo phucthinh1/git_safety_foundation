@@ -1,26 +1,48 @@
-def phep_tinh():
-    print("Chọn phép tính:")
-    print("1. Cộng (+)")
-    print("2. Trừ (-)")
-    print("3. Nhân (*)")
-    print("4. Chia (/)")
+def add(a, b):
+    return a + b
 
-    lua_chon = input("Nhập lựa chọn của bạn (1/2/3/4): ")
-    num1 = float(input("Nhập số thứ nhất: "))
-    num2 = float(input("Nhập số thứ hai: "))
 
-    if lua_chon == '1':
-        print(f"{num1} + {num2} = {num1 + num2}")
-    elif lua_chon == '2':
-        print(f"{num1} - {num2} = {num1 - num2}")
-    elif lua_chon == '3':
-        print(f"{num1} * {num2} = {num1 * num2}")
-    elif lua_chon == '4':
-        if num2 == 0:
-            print("Không thể chia cho số 0!")
-        else:
-            print(f"{num1} / {num2} = {num1 / num2}")
-    else:
-        print("Lựa chọn không hợp lệ.")
+def subtract(a, b):
+    return a - b
 
-phep_tinh()
+
+def multiply(a, b):
+    return a * b
+
+
+def divide(a, b):
+    if b == 0:
+        raise ValueError("Cannot divide by zero")
+    return a / b
+
+
+def calculate(expression):
+    try:
+        return eval(expression, {"__builtins__": None}, {
+            "add": add,
+            "subtract": subtract,
+            "multiply": multiply,
+            "divide": divide
+        })
+    except Exception as e:
+        raise ValueError(f"Invalid expression: {e}")
+
+
+def main():
+    print("Basic calculator")
+    print("Enter expressions using +, -, *, / or functions add(), subtract(), multiply(), divide()")
+    while True:
+        try:
+            expr = input("> ").strip()
+            if not expr:
+                continue
+            if expr.lower() in {"exit", "quit"}:
+                break
+            result = calculate(expr)
+            print(result)
+        except Exception as error:
+            print(error)
+
+
+if __name__ == "__main__":
+    main()
