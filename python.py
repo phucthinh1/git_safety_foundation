@@ -3,6 +3,10 @@ def add(a, b):
 
 
 
+def multiply(a, b):
+    return a * b
+
+
 def divide(a, b):
     if b == 0:
         raise ValueError("Cannot divide by zero")
@@ -13,6 +17,8 @@ def calculate(expression):
     try:
         return eval(expression, {"__builtins__": None}, {
             "add": add,
+            "subtract": subtract,
+            "multiply": multiply,
             "divide": divide
         })
     except Exception as e:
@@ -21,6 +27,7 @@ def calculate(expression):
 
 def main():
     print("Basic calculator")
+    print("Enter expressions using +, -, *, / or functions add(), subtract(), multiply(), divide()")
     while True:
         try:
             expr = input("> ").strip()
