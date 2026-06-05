@@ -51,7 +51,7 @@ Quy trình làm việc chuẩn được áp dụng trong dự án:
 ---
 
 
-## 5. Xử lý Conflict
+## 3. Xử lý Conflict
 
 ### Tình huống
 Nhánh `main` và nhánh tính năng cùng chỉnh sửa các dòng code giống nhau → Xung đột (Conflict)
@@ -62,7 +62,7 @@ Nhánh `main` và nhánh tính năng cùng chỉnh sửa các dòng code giống
 3. Commit merge hoàn tất quy trình
 
 
-## 6. Revert an toàn
+## 4. Revert an toàn
 
 ### Tình huống
 Cần hoàn tác một commit lỗi mà không làm mất lịch sử
@@ -75,7 +75,7 @@ git revert <commit-id>
 
 ---
 
-## 7. Vibe Coding với AI
+## 5. Vibe Coding với AI
 
 Khi làm việc với các công cụ AI (ChatGPT, Gemini, Copilot, GitHub Copilot):
 
@@ -97,7 +97,7 @@ Khi làm việc với các công cụ AI (ChatGPT, Gemini, Copilot, GitHub Copil
 
 ---
 
-## 📝 Ghi chú
+##  Ghi nhớ
 
 - Mỗi commit nên có mô tả ý nghĩa
 - Pull Request cần được review trước merge
