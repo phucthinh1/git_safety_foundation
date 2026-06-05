@@ -33,7 +33,6 @@ Git là **hệ thống quản lý phiên bản phân tán** (Distributed Version
 | `git commit -m "<message>"` | Ghi lại ảnh chụp trạng thái code với thông điệp |
 | `git push origin <branch>` | Đẩy commit lên nhánh tương ứng trên GitHub |
 | `git pull origin <branch>` | Kéo và gộp thay đổi mới nhất từ GitHub |
-| `git log --oneline` | Xem lịch sử commit rút gọn |
 
 ---
 
@@ -42,7 +41,6 @@ Git là **hệ thống quản lý phiên bản phân tán** (Distributed Version
 Quy trình làm việc chuẩn được áp dụng trong dự án:
 
 - **Branching**: Luôn tạo nhánh mới từ `main` cho mỗi tính năng hoặc sửa lỗi
-  - Ví dụ: `feature/multiplication-division`, `feature/exponentiation`
   
 - **Commits**: Commit thường xuyên với mô tả rõ ràng
   
@@ -52,31 +50,6 @@ Quy trình làm việc chuẩn được áp dụng trong dự án:
 
 ---
 
-## 3. Bảo mật GitHub
-
-### Các điều cần tuân thủ
-
-- **Không lưu thông tin nhạy cảm**
-  - Tuyệt đối không commit: API Keys, mật khẩu, file `.env`
-  
-- **Sử dụng `.gitignore`**
-  - Khai báo các file không cần track: `node_modules/`, `__pycache__/`, build artifacts
-  
-- **Sử dụng GitHub Secrets**
-  - Khi tích hợp CI/CD (GitHub Actions), lưu biến môi trường tại Settings > Secrets and Variables
-
----
-
-## 4. Thực hành Pull Request
-
-Các Pull Request đã thực hiện thành công:
-
-| PR | Mô tả | Nhánh |
-|----|----|-------|
-| #1 | Add multiplication and division methods | `feature/multiplication-division` → `main` |
-| #2 | Add exponentiation and documentation | `feature/exponentiation` → `main` |
-
----
 
 ## 5. Xử lý Conflict
 
@@ -88,12 +61,6 @@ Nhánh `main` và nhánh tính năng cùng chỉnh sửa các dòng code giống
 2. Xóa các thẻ đánh dấu: `<<<<<<<`, `=======`, `>>>>>>>`
 3. Commit merge hoàn tất quy trình
 
-**Ví dụ conflict markers:**
-```
-# Code từ nhánh khác
-```
-
----
 
 ## 6. Revert an toàn
 
@@ -105,10 +72,6 @@ Cần hoàn tác một commit lỗi mà không làm mất lịch sử
 git revert <commit-id>
 ```
 
-**Lợi ích:**
-- Tạo commit mới đảo ngược thay đổi
-- Giữ lại lịch sử commit rõ ràng
-- An toàn hơn so với `git reset --hard`
 
 ---
 
